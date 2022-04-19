@@ -1,13 +1,18 @@
-cmake_minimum_required (VERSION 2.8)
+cmake_minimum_required (VERSION 3.10)
 
 # projectname is the same as the main-executable
 project(%HERE%%FDIR%)
+set(CMAKE_CXX_STANDARD 14)
 
-add_definitions('-g')
-add_definitions('-Wall')
-#add_definitions('-std=c++11')
+# include_directories()
+# link_directories()
 
-add_executable(${PROJECT_NAME} ${PROJECT_NAME}.cpp)
+set(TARGET_SRCS
+	src/main.cc)
 
-add_custom_target(${PROJECT_NAME}-symlink ALL ln --force -s ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/${PROJECT_NAME} DEPENDS ${PROJECT_NAME})
-set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_SOURCE_DIR}/${PROJECT_NAME})
+set(TARGET_LINK_LIBS )
+
+add_executable(${PROJECT_NAME} ${TARGET_SRCS})
+add_library(${TARGET_NAME} STATIC ${TARGET_SRCS})
+target_link_libraries(${TARGET_NAME} ${TARGET_LINK_LIBS})
+

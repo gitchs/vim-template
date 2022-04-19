@@ -5,9 +5,10 @@
  * Distributed under terms of the %LICENSE% license.
  */
 
-#ifndef %GUARD%
-#define %GUARD%
+#ifndef __%GUARD%__
+#define __%GUARD%__
 
 %HERE%
 
-#endif /* !%GUARD% */
+#endif // __%GUARD%__
+
