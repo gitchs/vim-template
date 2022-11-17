@@ -8,7 +8,18 @@
 #ifndef __%GUARD%__
 #define __%GUARD%__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+// C code goes here
+
 %HERE%
 
-#endif // __%GUARD%__
+#ifdef __cplusplus
+}
+#endif
 
+
+#endif // __%GUARD%__

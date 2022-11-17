@@ -1,3 +1,6 @@
-#!/usr/bin/env doctor
+#!/usr/bin/env lua
+local libs = {}
+
 %HERE%
 
+return libs
